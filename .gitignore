@@ -51,16 +51,13 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 
-# Task Master (keep structure but ignore sensitive data)
+# Task Master (keep structure but ignore sensitive data and state)
 .taskmaster/tasks/tasks.json
 .taskmaster/.env
 .taskmaster/cache/
+.taskmaster/state.json
+.taskmaster/reports/*.json
 
 # Logs
 logs
 *.log
-
-# Optional: keep .taskmaster structure but ignore generated files
-.taskmaster/reports/*.json
-.taskmaster/cache/
-
