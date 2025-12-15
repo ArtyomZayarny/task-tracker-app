@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+*.log
+
+# Next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+
+# Production
+/dist
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Task Master (keep structure but ignore sensitive data)
+.taskmaster/tasks/tasks.json
+.taskmaster/.env
+.taskmaster/cache/
+
+# Logs
+logs
+*.log
+
+# Optional: keep .taskmaster structure but ignore generated files
+.taskmaster/reports/*.json
+.taskmaster/cache/
+

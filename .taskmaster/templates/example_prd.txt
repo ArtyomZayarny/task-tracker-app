@@ -1,0 +1,186 @@
+# Product Requirements Document (PRD) - Task Tracker Application
+
+## Project Overview
+
+A simple Task Tracker web application built with Next.js and TypeScript. This application allows users to manage tasks with basic CRUD operations, storing data locally in the browser. The project demonstrates clean code practices, TypeScript usage, AI-assisted development, and MCP integration.
+
+**Target Audience:** Development team members who need a simple task management tool.
+
+## Objectives
+
+- Create a functional Task Tracker application with clean, readable code
+- Demonstrate proficiency with React, TypeScript, and Next.js
+- Show effective use of AI tools (Cursor/Claude) in development
+- Integrate Task Master AI MCP for project management
+- Provide comprehensive documentation for team use
+
+## Features
+
+### Feature 1: Task List Display
+- Description: Display all tasks in a clean, organized list
+- Requirements:
+  - Show task title, description, and current status
+  - Visual status indicators (Badge components)
+  - Empty state message when no tasks exist
+  - Use shadcn/ui Card components for task containers
+
+### Feature 2: Add New Task
+- Description: Allow users to create new tasks
+- Requirements:
+  - Form with title (required) and description (optional) fields
+  - Submit button to add task
+  - Validation: title must not be empty
+  - New tasks default to "todo" status
+  - Use shadcn/ui Input and Button components
+
+### Feature 3: Edit Task
+- Description: Allow users to modify existing tasks
+- Requirements:
+  - Edit button on each task
+  - Pre-fill form with existing task data
+  - Update task title and/or description
+  - Save changes to update task
+
+### Feature 4: Delete Task
+- Description: Allow users to remove tasks
+- Requirements:
+  - Delete button on each task
+  - Immediate removal (no confirmation dialog required)
+  - Update localStorage after deletion
+
+### Feature 5: Change Task Status
+- Description: Allow users to update task status
+- Requirements:
+  - Three status options: "todo", "in-progress", "done"
+  - Status change via buttons or dropdown (Select component)
+  - Visual feedback with color-coded badges:
+    - todo: gray/secondary
+    - in-progress: blue
+    - done: green
+  - Immediate status update and persistence
+
+### Feature 6: Data Persistence
+- Description: Save tasks to browser localStorage
+- Requirements:
+  - Automatically save all changes to localStorage
+  - Load tasks from localStorage on app initialization
+  - Handle localStorage errors gracefully
+  - Use key: 'orbios-tasks'
+
+## Technical Requirements
+
+### Technology Stack
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + shadcn/ui components
+- **State Management:** React useState (custom hook)
+- **Storage:** Browser localStorage
+- **UI Components:** shadcn/ui (Button, Input, Card, Badge, Select)
+
+### Code Quality Requirements
+- TypeScript strict mode compliance
+- Clean, readable code structure
+- Proper TypeScript type definitions
+- No complex architecture or patterns
+- Well-organized file structure
+
+### Performance Requirements
+- Fast initial load
+- Instant UI updates
+- No backend calls (client-side only)
+
+### Browser Requirements
+- Modern browsers with localStorage support
+- No specific browser version requirements
+
+## User Stories
+
+- As a user, I want to add new tasks so that I can track my work items
+- As a user, I want to see all my tasks in a list so that I can view what needs to be done
+- As a user, I want to edit task details so that I can update information as needed
+- As a user, I want to delete tasks so that I can remove completed or unnecessary items
+- As a user, I want to change task status so that I can track progress (todo → in-progress → done)
+- As a user, I want my tasks to persist after page refresh so that I don't lose my data
+
+## Data Model
+
+### Task Interface
+```typescript
+interface Task {
+  id: string;           // Unique identifier (UUID or timestamp-based)
+  title: string;        // Task title (required)
+  description: string;  // Task description (optional)
+  status: 'todo' | 'in-progress' | 'done';
+}
+```
+
+### Status Values
+- `'todo'` - Task is not started
+- `'in-progress'` - Task is currently being worked on
+- `'done'` - Task is completed
+
+## Success Criteria
+
+- ✅ Application runs without errors
+- ✅ All CRUD operations work correctly (Create, Read, Update, Delete)
+- ✅ Data persists in localStorage across page refreshes
+- ✅ TypeScript types are properly defined and used
+- ✅ UI is clean, functional, and pleasant to use
+- ✅ Code is well-structured and readable
+- ✅ All required documentation is complete
+- ✅ Task Master MCP is integrated and documented
+
+## What is NOT Required
+
+- ❌ Complex architecture or design patterns
+- ❌ Backend server or API
+- ❌ Database (using localStorage only)
+- ❌ User authentication
+- ❌ Complex styling or animations
+- ❌ Drag-and-drop functionality (unless simple button-based)
+- ❌ Task filtering or search
+- ❌ Task timestamps or due dates
+- ❌ Task categories or tags
+
+## Project Structure
+
+```
+orbios-test-task/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page with Task Tracker
+│   └── globals.css        # Global styles
+├── components/             # React components
+│   ├── ui/                # shadcn/ui components
+│   ├── TaskList.tsx       # Main task list component
+│   ├── TaskItem.tsx       # Individual task component
+│   └── TaskForm.tsx       # Add/Edit task form
+├── hooks/                  # Custom React hooks
+│   └── useTasks.ts        # Task management hook
+├── types/                  # TypeScript types
+│   └── task.ts            # Task type definitions
+├── utils/                  # Utility functions
+│   └── storage.ts         # localStorage helpers
+└── docs/                   # Documentation
+    ├── AI_WORKFLOW_DOCUMENTATION.md
+    ├── TASK_TRACKER_INSTRUCTIONS.md
+    ├── MCP_INTEGRATION.md
+    └── DEVELOPMENT_PROCESS.md
+```
+
+## Timeline
+
+- **Phase 1 (Setup):** 15-20 minutes - Project initialization, shadcn/ui setup
+- **Phase 2 (Development):** 60-75 minutes - Core application development
+- **Phase 3 (MCP Integration):** 20-30 minutes - Task Master MCP setup and usage
+- **Phase 4 (Documentation):** 30-40 minutes - All required documentation
+- **Phase 5 (Testing/Polish):** 10-15 minutes - Testing and final cleanup
+- **Total:** ~2.5-3 hours
+
+## Notes
+
+- Focus on quality and simplicity over complexity
+- Use AI tools (Cursor/Claude) effectively throughout development
+- Document the AI workflow process
+- Keep code clean and maintainable
+- Ensure all test requirements are met
