@@ -1,17 +1,17 @@
 // app/page.tsx
-'use client';
+"use client";
 
-import { TaskList } from '../components/TaskList';
-import { useTasks } from '../hooks/useTasks';
+import { TaskList } from "../components/TaskList";
+import { useTasks } from "../hooks/useTasks";
 
 export default function Home() {
-  const { 
-    tasks, 
-    isLoading, 
-    addTask, 
-    updateTask, 
-    deleteTask, 
-    updateTaskStatus 
+  const {
+    tasks,
+    isLoading,
+    addTask,
+    updateTask,
+    deleteTask,
+    updateTaskStatus,
   } = useTasks();
 
   return (
